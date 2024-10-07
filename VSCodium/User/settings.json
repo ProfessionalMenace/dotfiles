@@ -1,0 +1,11 @@
+{
+  "workbench.colorTheme": "Catppuccin Macchiato",
+  "editor.tabSize": 4,
+  "editor.insertSpaces": true,
+  "editor.detectIndentation": false,
+  "security.workspace.trust.enabled": false,
+"workbench.sideBar.location": "right",
+"zig.initialSetupDone": true,
+"zig.path": "zig",
+"zig.zls.path": "zls"
+}
