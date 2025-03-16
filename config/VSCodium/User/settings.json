@@ -5,5 +5,5 @@
     "editor.wordWrap": "on",
     "security.workspace.trust.enabled": false,
     "workbench.colorTheme": "Catppuccin Mocha",
-    "workbench.sideBar.location": "right",
+    "workbench.sideBar.location": "right"
 }
