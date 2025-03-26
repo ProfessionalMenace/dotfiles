@@ -31,28 +31,6 @@ riverctl map normal Super+Shift H send-layout-cmd rivertile "main-count +1"
 riverctl map normal Super+Shift L send-layout-cmd rivertile "main-count -1"
 
 #--------------------------------------------------------------------------------------
-# MOVING AND RESIZING
-#--------------------------------------------------------------------------------------
-
-# Super+Alt+{H,J,K,L} to move views
-riverctl map normal Super+Alt H move left 100
-riverctl map normal Super+Alt J move down 100
-riverctl map normal Super+Alt K move up 100
-riverctl map normal Super+Alt L move right 100
-
-# Super+Alt+Control+{H,J,K,L} to snap views to screen edges
-riverctl map normal Super+Alt+Control H snap left
-riverctl map normal Super+Alt+Control J snap down
-riverctl map normal Super+Alt+Control K snap up
-riverctl map normal Super+Alt+Control L snap right
-
-# Super+Alt+Shift+{H,J,K,L} to resize views
-riverctl map normal Super+Alt+Shift H resize horizontal -95
-riverctl map normal Super+Alt+Shift J resize vertical 100
-riverctl map normal Super+Alt+Shift K resize vertical -100
-riverctl map normal Super+Alt+Shift L resize horizontal 100
-
-#--------------------------------------------------------------------------------------
 # NUMBERS
 #--------------------------------------------------------------------------------------
 for i in $(seq 1 9)
@@ -76,6 +54,7 @@ riverctl map normal Super+Shift 0 set-view-tags $all_tags
 
 # Super+F to toggle fullscreen
 riverctl map normal Super F toggle-fullscreen
+riverctl map normal Super+Shift F toggle-float
 
 # Super+{Up,Right,Down,Left} to change layout orientation
 riverctl map normal Super Up    send-layout-cmd rivertile "main-location top"
@@ -112,7 +91,9 @@ rivertile -view-padding 6 -outer-padding 6 &
 # DBUS
 #--------------------------------------------------------------------------------------
 
+systemctl --user import-environment WAYLAND_DISPLAY XDG_CURRENT_DESKTOP
 dbus-update-activation-environment --systemd WAYLAND_DISPLAY XDG_CURRENT_DESKTOP=river
+systemctl --user restart xdg-desktop-portal
 
 #--------------------------------------------------------------------------------------
 # STARTUP
