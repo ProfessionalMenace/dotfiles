@@ -9,7 +9,7 @@
     "margin-left": 2,
 
     "modules-left": [
-        "river/workspaces"
+        "river/tags"
     ],
 
     "modules-center": [
@@ -18,7 +18,6 @@
 
     "modules-right": [
         "tray",
-        "cpu_text",
         "cpu",
         "memory",
         "battery",
@@ -26,10 +25,9 @@
         "pulseaudio"
     ],
 
-    "river/workspaces": {
-        "disable-scroll": true,
-        "all-outputs": true,
-        "tooltip": false
+    "river/tags": {
+	"num-tags": 9,
+    "hide-vacant": true
     },
 
     "tray": {
@@ -38,14 +36,13 @@
     },
 
     "clock": {
-        "format": "{:%H:%M}",
-        "tooltip": false
+        "format": "{:%a %H:%M}",
+        "tooltip-format": "{:%Y-%m-%d}"
     },
 
     "cpu": {
         "format": "cpu {usage}%",
         "interval": 2,
-
         "states": {
             "critical": 90
         }
@@ -54,20 +51,19 @@
     "memory": {
         "format": "mem {percentage}%",
         "interval": 2,
-
         "states": {
             "critical": 80
-        }
+        },
+        "tooltip": false
     },
 
     "battery": {
         "format": "bat {capacity}%",
-        "interval": 5,
+        "interval": 60,
         "states": {
             "warning": 20,
             "critical": 10
-        },
-        "tooltip": false
+        }
     },
 
     "network": {
@@ -84,7 +80,6 @@
         "format": "vol {volume}%",
         "format-bluetooth": "vol {volume}%",
         "nospacing": 1,
-        "on-click": "pavucontrol",
         "tooltip": false
     }
 }
