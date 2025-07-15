@@ -33,6 +33,7 @@ riverctl map normal Super+Shift L send-layout-cmd rivertile "main-count -1"
 #--------------------------------------------------------------------------------------
 # NUMBERS
 #--------------------------------------------------------------------------------------
+
 for i in $(seq 1 9)
 do
     tags=$((1 << ($i - 1)))
@@ -88,7 +89,11 @@ riverctl default-layout rivertile
 rivertile -view-padding 6 -outer-padding 6 &
 
 #--------------------------------------------------------------------------------------
-# DBUS
+riverctl map normal None XF86MonBrightnessUp   spawn 'brightnessctl set +1%'
+riverctl map normal None XF86MonBrightnessDown spawn 'brightnessctl set 1%-'
+
+#--------------------------------------------------------------------------------------
+# DBUS EVIL HACK
 #--------------------------------------------------------------------------------------
 
 systemctl --user import-environment WAYLAND_DISPLAY XDG_CURRENT_DESKTOP
@@ -101,5 +106,7 @@ systemctl --user restart xdg-desktop-portal
 
 riverctl spawn ghostty
 riverctl spawn waybar
+riverctl spawn swayidle
+riverctl spawn nm-applet 
 riverctl keyboard-layout -options "grp:win_space_toggle" "us,cz(qwerty)"
 
