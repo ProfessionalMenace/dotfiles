@@ -9,7 +9,7 @@
     "margin-left": 2,
 
     "modules-left": [
-        "river/tags"
+        "sway/workspaces"
     ],
 
     "modules-center": [
@@ -20,17 +20,18 @@
         "tray",
         "cpu",
         "memory",
+        "disk",
         "battery",
         "network",
         "pulseaudio"
     ],
 
-    "river/tags": {
-	"num-tags": 9,
-    "hide-vacant": true
+    "sway/workplaces": {
+        "disable-scroll": true,
+        "all-outputs": true
     },
 
-    "tray": {
+   "tray": {
         "spacing": 10,
         "tooltip": false
     },
@@ -41,7 +42,7 @@
     },
 
     "cpu": {
-        "format": "cpu {usage}%",
+        "format": " {usage}%",
         "interval": 2,
         "states": {
             "critical": 90
@@ -49,7 +50,7 @@
     },
 
     "memory": {
-        "format": "mem {percentage}%",
+        "format": " {percentage}%",
         "interval": 2,
         "states": {
             "critical": 80
@@ -57,9 +58,15 @@
         "tooltip": false
     },
 
+    "disk": {
+        "interval": 30,
+        "format": " {percentage_free}%",
+        "path": "/"
+    },
+
     "battery": {
-        "format": "bat {capacity}%",
-        "interval": 60,
+        "format": " {capacity}%",
+        "interval": 30,
         "states": {
             "warning": 20,
             "critical": 10
@@ -67,9 +74,9 @@
     },
 
     "network": {
-        "format-wifi" : "wifi {bandwidthDownBits}",
-        "format-ethernet": "enth {bandwidthDownBits}",
-        "format-disconnected" : "no network",
+        "format-wifi": "󰤢 {bandwidthDownBits}",
+        "format-ethernet": "󰈀 {bandwidthDownBits}",
+        "format-disconnected": "󰤠 ",
         "interval": 5,
         "tooltip": false
     },
@@ -77,8 +84,7 @@
     "pulseaudio": {
         "scroll-step": 5,
         "max-volume": 150,
-        "format": "vol {volume}%",
-        "format-bluetooth": "vol {volume}%",
+        "format": "  {volume}%",
         "nospacing": 1,
         "tooltip": false
     }
