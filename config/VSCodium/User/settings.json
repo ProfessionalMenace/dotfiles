@@ -1,9 +1,16 @@
 {
-    "editor.tabSize": 4,
+    "editor.tabSize": 2,
     "editor.insertSpaces": true,
     "editor.detectIndentation": false,
     "editor.wordWrap": "on",
     "security.workspace.trust.enabled": false,
-    "workbench.colorTheme": "Catppuccin Mocha",
-    "workbench.sideBar.location": "right"
+    "editor.inlayHints.enabled": "offUnlessPressed",
+    "editor.rulers": [80],
+    "workbench.sideBar.location": "right",
+    "lean4.alwaysAskBeforeInstallingLeanVersions": false,
+    "haskell.manageHLS": "GHCup",
+    "workbench.colorTheme": "Catppuccin Macchiato",
+    "editor.fontSize": 16,
+    "editor.fontFamily": "'FiraCode Nerd Font', 'Fira Code', monospace",
+    "editor.fontLigatures": true,
 }
