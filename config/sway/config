@@ -98,6 +98,10 @@ bindsym $mod+Shift+minus move scratchpad
 # If there are multiple scratchpad windows, this command cycles through them.
 bindsym $mod+minus scratchpad show
 
+# Special keys to adjust brightness via brightnessctl
+bindsym --locked XF86MonBrightnessDown exec brightnessctl set 5%-
+bindsym --locked XF86MonBrightnessUp exec brightnessctl set 5%+
+
 default_border none
 bar {
     swaybar_command waybar
@@ -130,7 +134,7 @@ bindsym $mod+r mode "resize"
 
 # EVIL HACK
 exec systemctl --user import-environment WAYLAND_DISPLAY XDG_CURRENT_DESKTOP
-exec us-update-activation-environment --systemd WAYLAND_DISPLAY XDG_CURRENT_DESKTOP=sway
+exec dbus-update-activation-environment --systemd WAYLAND_DISPLAY XDG_CURRENT_DESKTOP=sway
 
 exec swayidle
 exec swaybg -i $HOME/Pictures/Wallpapers/8A.png
